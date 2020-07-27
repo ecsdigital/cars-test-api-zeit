@@ -4,11 +4,29 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "http-errors": "^1.8.0",
     "node-fetch": "^2.6.0"
   },
-  "devDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run test",
+      "pre-commit": "npm run lint"
+    }
+  },
+  "devDependencies": {
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.2.5",
+    "nock": "^13.0.2",
+    "prettier": "^2.0.5",
+    "tap": "^14.10.8"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint . --ext .js",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "tap --lines=90 --branches=70 --functions=90 --statements=90 --test-regex=test/.*.test.js$"
   },
   "author": "",
   "license": "ISC"

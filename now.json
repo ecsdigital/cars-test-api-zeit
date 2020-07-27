@@ -1,0 +1,7 @@
+{
+  "env": {
+    "JSONBIN_ID": "@jsonbin-id",
+    "JSONBIN_SECRET": "@jsonbin-secret",
+    "AUTH_SECRET": "@cars-auth-secret"
+  }
+}
